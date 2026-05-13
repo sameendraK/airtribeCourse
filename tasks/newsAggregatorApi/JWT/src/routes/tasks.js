@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.send('Get all tasks');
+});
 module.exports = router;
-
-// const { getTasks } = require('../controller/tasks.js')
-// const { createTask } = require('../controller/tasks.js')

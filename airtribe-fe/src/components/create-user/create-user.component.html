@@ -1,0 +1,28 @@
+
+<div class="form" [formGroup]="userForm">
+    <div class="user-details">
+        <div class="user-name" #userName>
+            <input #name type="text" placeholder="Enter your name" formControlName="name">
+        </div>
+    
+        <div class="user-email">
+            <input #email type="email" placeholder="Enter your email" formControlName="email">
+        </div>
+    
+        <div class="user-password">
+            <input #password type="password" placeholder="Enter your password" formControlName="password">
+        </div>
+    </div>
+    
+    <div class="user">
+        <button class="user-button" (click)="createUser()">
+            <span class="user-name">Create User</span>
+        </button>
+    </div>
+    
+    <div class="preferences">
+        <button class="preferences-button" (click)="getPreferences()">
+            <span class="preferences-text">Get Preferences</span>
+        </button>
+    </div>
+</div>

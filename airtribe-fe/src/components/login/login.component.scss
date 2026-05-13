@@ -1,0 +1,41 @@
+.success-message {
+  margin-top: 20px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+  width: fit-content;
+
+  animation: successAnimation 0.5s ease;
+
+  box-shadow:
+    0 0 10px rgba(22, 163, 74, 0.4),
+    0 0 20px rgba(22, 163, 74, 0.3);
+
+}
+
+@keyframes successAnimation {
+
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.login-button:active {
+  transform: scale(0.96);
+}
+
+.login-button {
+  transition: all 0.2s ease;
+}

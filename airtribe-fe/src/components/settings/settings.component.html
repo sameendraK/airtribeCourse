@@ -1,0 +1,27 @@
+<div class="settings-wrapper-cotainer">
+    <div class="settings">
+        <h2>Settings</h2>
+        <p>Here you can manage your settings and preferences.</p>
+
+        <select [value]="selectedSetting" (click)="onSettingClick()" (change)="onSettingChange($event)">
+            <option *ngIf="!settings.length" value="" disabled>
+                Click to load settings
+            </option>
+            <option *ngFor="let setting of settings" [value]="getOptionValue(setting)">
+                {{ getOptionLabel(setting) }}
+            </option>
+        </select>
+
+        <div *ngIf="loading" class="loading">Loading...</div>
+        <div *ngIf="error" class="error">{{ error }}</div>
+        <div *ngIf="settings.length && !preferences" class="hint">
+            Select a setting to load its preferences.
+        </div>
+        <pre *ngIf="preferences">{{ preferences | json }}</pre>
+    </div>
+    <div class="preferences">
+        <h2>Preferences</h2>
+        <p>View and manage your preferences for the selected setting.</p>
+        <button (click)="onPreferencesClick()"> Preferences</button>
+    </div>
+</div>
